@@ -1,7 +1,8 @@
-import Dashboard_Sidebar from "../components/Dashboard_sidebar";
+import Dashboard_Sidebar from "@/components/Dashboard_Sidebar";
 import { useState } from "react";
-import UsersTab from "../components/UsersTab";
-import BooksTab from "../components/BooksTab";
+import UsersTab from "@/components/UsersTab";
+import ReservationsTab from "@/components/ReservationTab";
+import BooksTab from "@/components/BooksTab";
 import { useNavigate } from "react-router";
 
 function Dashboard() {
@@ -22,10 +23,13 @@ function Dashboard() {
         return <UsersTab />;
       case "Books":
         return <BooksTab />;
+      case "Reservations": // Add Reservations case
+        return <ReservationsTab />;
       default:
         return <BooksTab />;
     }
   };
+
   return (
     <div className="min-h-screen grid grid-cols-4 ">
       <div>

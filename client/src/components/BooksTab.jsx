@@ -16,20 +16,24 @@ function BooksTab() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen p-6">
+      <h1 className="text-2xl font-bold mb-6">Library Books</h1>
       <BooksTable />
 
       <Button
         onClick={handleAddBook}
         variant="default"
         size="lg"
-        className="fixed bottom-10 right-10 "
+        className="fixed bottom-10 right-10"
       >
-        <Plus className="w-5 h-5" /> {/* Plus Icon */}
-        <span>Add Book</span>
+        <Plus className="w-5 h-5 mr-2" />
+        Add Book
       </Button>
 
-      {isModalOpen && <AddBookModal onClose={handleCloseModal} />}
+      <AddBookModal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+      />
     </div>
   );
 }
