@@ -28,6 +28,10 @@ function Dashboard_Sidebar({ setActiveTab, activeTab }) {
       title: "Users",
       icon: Calendar,
     },
+    {
+      title: "Reservations",
+      icon: Calendar,
+    }
   ];
 
   return (
