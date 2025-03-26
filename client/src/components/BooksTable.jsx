@@ -12,7 +12,7 @@ function BooksTable() {
   const books = [
     {
       title: "The Great Gatsby",
-      category: "Fiction",
+      category: "Ficti",
       availableCopies: 5,
       author: "F. Scott Fitzgerald",
       image:

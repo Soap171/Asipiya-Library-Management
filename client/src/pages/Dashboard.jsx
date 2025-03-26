@@ -3,6 +3,7 @@ import { useState } from "react";
 import UsersTab from "../components/UsersTab";
 import BooksTab from "../components/BooksTab";
 import { useNavigate } from "react-router";
+import ReservationsTab from "@/components/reservationsTab";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -22,10 +23,13 @@ function Dashboard() {
         return <UsersTab />;
       case "Books":
         return <BooksTab />;
+      case "Reservations":
+        return <ReservationsTab />;
       default:
         return <BooksTab />;
     }
   };
+
   return (
     <div className="min-h-screen grid grid-cols-4 ">
       <div>
