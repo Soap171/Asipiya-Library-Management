@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+
 import { useParams, useNavigate } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+
+import { useParams } from "react-router";
 
 const books = [
   // Fiction Books
@@ -163,8 +165,13 @@ function BookCategory() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="p-8 text-white bg-gray-900 min-h-screen">
       <h1 className="text-4xl font-extrabold text-center mb-8 uppercase tracking-wide">
+=======
+    <div className="p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
+      <h1 className="text-3xl font-bold text-center mb-6">
+>>>>>>> 8cb489c662bbad18cb67bb872d3f4881d42a4b97
         {categoryName} Books
       </h1>
 
@@ -176,9 +183,20 @@ function BookCategory() {
             placeholder="Search for a book..."
             value={searchTerm}
             onChange={handleSearchChange}
+<<<<<<< HEAD
             className="w-full px-4 py-3 pl-12 border rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
           <FaSearch className="absolute left-4 top-3 text-gray-400 text-lg" />
+=======
+            className="w-full p-2 pl-4 pr-10 border rounded-md 
+              bg-gray-100 dark:bg-gray-700 
+              text-gray-900 dark:text-white
+              border-gray-300 dark:border-gray-600
+              focus:outline-none 
+              focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+          />
+          <FaSearch className="absolute right-3 top-3 text-gray-500 dark:text-gray-300" />
+>>>>>>> 8cb489c662bbad18cb67bb872d3f4881d42a4b97
         </div>
       </div>
 
@@ -188,20 +206,36 @@ function BookCategory() {
           filteredBooks.map((book) => (
             <div
               key={book.id}
+<<<<<<< HEAD
               className="bg-gray-800 p-5 rounded-xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl cursor-pointer"
               onClick={() => handleBookClick(book.id)}
             >
+=======
+            className="bg-gray-800 p-4 rounded-lg shadow-md w-48 text-center cursor-pointer"
+           >
+>>>>>>> 8cb489c662bbad18cb67bb872d3f4881d42a4b97
               <img
                 src={book.image}
                 alt={book.title}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
+<<<<<<< HEAD
               <h2 className="text-xl font-semibold text-white">{book.title}</h2>
               <p className="text-gray-400">{book.author}</p>
             </div>
           ))
         ) : (
           <p className="text-gray-400 text-center col-span-full text-lg">
+=======
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                {book.title}
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400">{book.author}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-500 dark:text-gray-400 text-center">
+>>>>>>> 8cb489c662bbad18cb67bb872d3f4881d42a4b97
             No books found.
           </p>
         )}

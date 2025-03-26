@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React from "react";
 import { useNavigate } from "react-router-dom";
+=======
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+>>>>>>> 8cb489c662bbad18cb67bb872d3f4881d42a4b97
 
 const BookDetails = () => {
   const [categories, setCategories] = React.useState([
