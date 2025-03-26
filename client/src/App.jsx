@@ -13,11 +13,12 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import BookDetails from "./pages/Book_details";
-import BookCategory from "./pages/Book_category"; // Corrected import
-import BookView from "./pages/Book_view"; // Corrected import
+import BookCategory from "./pages/Book_category";
+import BookView from "./pages/Book_view";
 
-// app component
+// app components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // Import Footer
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
 function AppContent() {
   const location = useLocation();
 
+  // Routes where the navbar should be hidden
   const hideNavbarRoutes = [
     "/verify-email",
     "/login",
@@ -43,23 +45,40 @@ function AppContent() {
   ];
   const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
 
+  // Routes where the footer should be hidden
+  const hideFooterRoutes = [
+    "/login",
+    "/signup",
+    "/forget-password",
+    "/reset-password",
+  ];
+
+  // Fix: Ensure dynamic routes (like /book/:bookId or /book-category/:categoryName) still show the footer
+  const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
+
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       {!shouldHideNavbar && <Navbar />}
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/forget-password" element={<Forget_password />} />
-        <Route path="/reset-password" element={<Reset_password />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/verify-email" element={<Verify_email />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/book-details" element={<BookDetails />} />
-        <Route path="/book-category/:categoryName" element={<BookCategory />} />
-        <Route path="/book/:bookId" element={<BookView />} />
-      </Routes>
-    </>
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forget-password" element={<Forget_password />} />
+          <Route path="/reset-password" element={<Reset_password />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/verify-email" element={<Verify_email />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/book-details" element={<BookDetails />} />
+          <Route
+            path="/book-category/:categoryName"
+            element={<BookCategory />}
+          />
+          <Route path="/book/:bookId" element={<BookView />} />
+        </Routes>
+      </main>
+      {!shouldHideFooter && <Footer />}
+    </div>
   );
 }
 
