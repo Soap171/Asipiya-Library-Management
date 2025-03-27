@@ -103,7 +103,7 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </>
+    <div/>
 
       <main className="flex-grow">
         <Routes>

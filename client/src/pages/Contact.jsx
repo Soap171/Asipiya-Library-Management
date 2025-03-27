@@ -42,7 +42,7 @@ function Contact() {
     <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-r from-blue-100 to-purple-200 dark:from-gray-800 dark:to-gray-900">
       <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="text-center md:text-left">
-          <h1 className="text-5xl font-bold text-blue-900 dark:text-blue-300 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Contact Us</h1>
+          <h1 className="text-5xl font-bold text-white-900 dark:text-white-300 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Contact Us</h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>
             We'd love to hear from you! Fill out the form below, and we'll get back to you as soon as possible.
           </p>
